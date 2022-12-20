@@ -1,0 +1,39 @@
+[
+    {
+        "name": "id",
+        "text_type": "title"
+    },
+    {
+        "name": "author",
+        "label": "Customer",
+        "text_type": "multi_line"
+    },
+    {
+        "name": "subject",
+        "label": "Name",
+        "text_type": "multi_line",
+        "line_break": true
+    },
+    {
+        "name": "tracker",
+        "label": "Method",
+        "text_type": "multi_line"
+    },
+    {
+        "name": "Copies",
+        "label": "Copies",
+        "text_type": "multi_line",
+        "line_break": true
+    },
+    {
+        "name": "Estimated Cost",
+        "label": "Cost",
+        "text_type": "multi_line"
+    },
+    {
+        "name": "start_date",
+        "label": "Date Submitted",
+        "text_type": "multi_line",
+        "line_break": true
+    }
+]
