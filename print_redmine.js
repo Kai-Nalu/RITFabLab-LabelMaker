@@ -4,7 +4,7 @@ exports.print_redmine = function(args) {
         const generate_label_png = require("./generate_label_png");
         
         generate_label_png.generate_label_png(args).then(function(){
-            //exec('lp -d DYMO_LabelWriter_450 ./output/label.png');
+            exec('lp -d DYMO_LabelWriter_450 ./output/label.png');
             resolve();
         });
     });
