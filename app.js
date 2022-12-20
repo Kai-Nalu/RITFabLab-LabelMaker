@@ -3,7 +3,7 @@ const app = express();
 const port = 3001;
 
 require('console-stamp')(console, { 
-    format: ':date(yyyy/mm/dd HH:MM:ss.l).blue :label().green' 
+    format: ':date(yyyy/mm/dd HH:MM:ss.l).magenta :label().green' 
 });
 
 app.get('/', (req, res) => {
