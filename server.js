@@ -1,5 +1,6 @@
 "use strict";
  
+var pkg = require("./package.json");
 var app = require("./app.js");
  
 require("greenlock-express")
@@ -8,6 +9,9 @@ require("greenlock-express")
  
         // contact for security and critical bug notices
         configDir: "./greenlock.d",
+        
+        // contact for security and critical bug notices
+        maintainerEmail: pkg.author,
  
         // whether or not to run at cloudscale
         cluster: false
