@@ -8,6 +8,7 @@ require('console-stamp')(console, {
 
 app.get('/', (req, res) => {
   res.send('Landing page for RITFabLab-LabelMaker app!');
+  console.log(`Test connection from ${req.socket.remoteAddress}`);
 });
 
 const print_redmine = require("./print_redmine");
