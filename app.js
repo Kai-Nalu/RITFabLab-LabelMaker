@@ -7,10 +7,9 @@ require('console-stamp')(console, {
 const app = express();
 const port = 2194;
 
-//app.listen(port, () => {
-//  console.info(`RITFabLab-LabelMaker app listening on port ${port}`);
-//});
-module.exports = app;
+app.listen(port, () => {
+  console.info(`RITFabLab-LabelMaker app listening on port ${port}`);
+});
 
 app.get('/', (req, res) => {
   res.send('Landing page for RITFabLab-LabelMaker app!');

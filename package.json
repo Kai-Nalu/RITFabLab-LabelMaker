@@ -3,17 +3,15 @@
     "canvas": "^2.10.2",
     "console-stamp": "^3.1.0",
     "express": "^4.18.2",
-    "fs": "^0.0.1-security",
-    "greenlock-express": "^4.0.3"
+    "fs": "^0.0.1-security"
   },
   "author": "kainietogonzalez@gmail.com",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "name": "rit-fablab-labelmaker",
   "version": "1.0.0",
-  "main": "server.js",
-  "devDependencies": {},
+  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kai-Nalu/RITFabLab-LabelMaker.git"
