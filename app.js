@@ -12,13 +12,18 @@ app.get('/', (req, res) => {
 
 const print_redmine = require("./print_redmine");
 app.get('/print-redmine', (req, res) => {
-    res.json(JSON.parse(req.query.json));
-    console.log(`Printing ticket`);
-    print_redmine.print_redmine(JSON.parse(req.query.json)).then(function(){
-        console.log(`Print successful`);
-    });
+  res.json(JSON.parse(req.query.json));
+  console.log(`Printing ticket`);
+  print_redmine.print_redmine(JSON.parse(req.query.json)).then(function(){
+      console.log(`Print successful`);
+  });
+});
+
+const print_jira = require("./print_jira");
+app.get('/print-jira', (req, res) => {
+  console.log(`Connected`);
 });
 
 app.listen(port, () => {
-    console.log(`RITFabLab-LabelMaker app listening on port ${port}`);
+  console.log(`RITFabLab-LabelMaker app listening on port ${port}`);
 });

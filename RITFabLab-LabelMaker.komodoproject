@@ -2,5 +2,6 @@
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="79696898-4a7a-d947-adec-aefb54cfc10e" kpf_version="5" name="RITFabLab-LabelMaker.komodoproject">
 <preference-set idref="79696898-4a7a-d947-adec-aefb54cfc10e" id="project" preftype="project">
+  <long id="prefs_version">1</long>
 </preference-set>
 </project>
