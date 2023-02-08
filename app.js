@@ -1,9 +1,19 @@
 const express = require('express');
-const app = express();
-const port = 2194;
+const http = require('http');
+const https = require('https');
 
 require('console-stamp')(console, { 
     format: ':date(yyyy/mm/dd HH:MM:ss.l).magenta :label().green' 
+});
+
+const app = express();
+const port = 2194;
+const credentials = {key: privateKey, cert: certificate};
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(port, () => {
+  console.info(`RITFabLab-LabelMaker app listening on port ${port}`);
 });
 
 app.get('/', (req, res) => {
@@ -28,8 +38,4 @@ app.get('/print-jira', (req, res) => {
   print_jira.print_jira(req.query.key).then(function(){
     console.log(`Print successful`);
   });
-});
-
-app.listen(port, () => {
-  console.info(`RITFabLab-LabelMaker app listening on port ${port}`);
 });
