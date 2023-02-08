@@ -8,9 +8,9 @@ require('console-stamp')(console, {
 
 const app = express();
 const port = 2194;
-const credentials = {key: privateKey, cert: certificate};
+//const credentials = {key: privateKey, cert: certificate};
 const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
+//const httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(port, () => {
   console.info(`RITFabLab-LabelMaker app listening on port ${port}`);
