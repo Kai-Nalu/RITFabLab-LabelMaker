@@ -1,6 +1,4 @@
 const express = require('express');
-const http = require('http');
-const https = require('https');
 
 require('console-stamp')(console, { 
     format: ':date(yyyy/mm/dd HH:MM:ss.l).magenta :label().green' 
@@ -8,13 +6,11 @@ require('console-stamp')(console, {
 
 const app = express();
 const port = 2194;
-//const credentials = {key: privateKey, cert: certificate};
-const httpServer = http.createServer(app);
-//const httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(port, () => {
-  console.info(`RITFabLab-LabelMaker app listening on port ${port}`);
-});
+//app.listen(port, () => {
+//  console.info(`RITFabLab-LabelMaker app listening on port ${port}`);
+//});
+module.exports = app;
 
 app.get('/', (req, res) => {
   res.send('Landing page for RITFabLab-LabelMaker app!');
