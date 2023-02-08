@@ -8,7 +8,7 @@ require('console-stamp')(console, {
 
 app.get('/', (req, res) => {
   res.send('Landing page for RITFabLab-LabelMaker app!');
-  console.log(`Test connection from ${req.socket.remoteAddress}`);
+  console.debug(`Test connection from ${req.socket.remoteAddress}`);
 });
 
 const print_redmine = require("./print_redmine");
@@ -16,15 +16,20 @@ app.get('/print-redmine', (req, res) => {
   res.json(JSON.parse(req.query.json));
   console.log(`Printing ticket`);
   print_redmine.print_redmine(JSON.parse(req.query.json)).then(function(){
-      console.log(`Print successful`);
+    console.log(`Print successful`);
   });
 });
 
-const print_jira = require("./print_jira");
+//DEPRECIATE
+const print_jira = require("./jira/print_jira");
 app.get('/print-jira', (req, res) => {
-  console.log(`Connected`);
+  res.send(req.query.key);
+  console.log(`Printing ticket`);
+  print_jira.print_jira(req.query.key).then(function(){
+    console.log(`Print successful`);
+  });
 });
 
 app.listen(port, () => {
-  console.log(`RITFabLab-LabelMaker app listening on port ${port}`);
+  console.info(`RITFabLab-LabelMaker app listening on port ${port}`);
 });
