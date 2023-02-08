@@ -5,5 +5,23 @@
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "greenlock-express": "^4.0.3"
-  }
+  },
+  "author": "kainietogonzalez@gmail.com",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "rit-fablab-labelmaker",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kai-Nalu/RITFabLab-LabelMaker.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kai-Nalu/RITFabLab-LabelMaker/issues"
+  },
+  "homepage": "https://github.com/Kai-Nalu/RITFabLab-LabelMaker#readme",
+  "description": ""
 }
