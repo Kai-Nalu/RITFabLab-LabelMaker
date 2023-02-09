@@ -28,7 +28,7 @@ exports.jiraHandler = function (ticketKey) {
         }
         
         function jiraParser(ticketJson) {
-            if (!ticketJson) {break;}
+            if (!ticketJson) {return;}
             const name = ticketJson['fields']['summary'];
             const reporter = normalizeReporter(ticketJson['fields']['creator']['displayName']);
             const birthdayRaw = ticketJson['fields']['created'];
