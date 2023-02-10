@@ -29,7 +29,7 @@ app.get('/print-redmine', (req, res) => {
 const print_jira = require("./jira/print_jira");
 app.get('/print-jira', (req, res) => {
   res.send(req.query.key);
-  console.log(`Printing ticket`);
+  console.log(`Printing ticket ${req.query.key}`);
   print_jira.print_jira(req.query.key).then(function(){
     console.log(`Print successful`);
   });
