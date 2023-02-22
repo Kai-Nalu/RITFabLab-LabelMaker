@@ -38,7 +38,7 @@ exports.jiraHandler = function (ticketKey) {
             const copiesFiltered = Math.trunc(copiesRaw);
             const copies = copiesFiltered.toString();
             const cost = ticketJson['fields']['customfield_12001'];
-            const method = ticketJson['fields']['customfield_12101']['value'];
+            const method = ticketJson['fields']['issuetype']['name'];
             
             return {
                 "id": ticketKey,
