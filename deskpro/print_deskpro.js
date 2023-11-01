@@ -11,7 +11,7 @@ async function deskproAPIGet(id) {
             "X-DeskPRO-API-Key": APIKey
         }
     });
-    const data = await.response.json();
+    const data = await response.json();
     return data['tickets'][0];
 }
 
