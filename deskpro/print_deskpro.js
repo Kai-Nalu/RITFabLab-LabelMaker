@@ -17,7 +17,6 @@ async function deskproAPIGet(id) {
 }
 
 function processTicketData(data) {
-    console.log(data);
     const id = data['id'];
     const person = data['person']['name'];
     const subject = data['subject'];
