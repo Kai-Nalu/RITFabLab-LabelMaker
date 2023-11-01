@@ -8,7 +8,7 @@ async function deskproAPIGet(id) {
     const response = await fetch(`https://fablab.cad.rit.edu/api/tickets/${id}`, {
         method: "GET",
         headers: {
-            "X-DeskPRO-API-Key": APIKey;
+            "X-DeskPRO-API-Key": APIKey
         }
     });
     const data = await.response.json();
