@@ -46,4 +46,4 @@ function printWithKey(key) {
     });
 }
 
-export { printWithKey };
+module.exports = { printWithKey };
