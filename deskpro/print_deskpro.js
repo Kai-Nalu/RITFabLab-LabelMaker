@@ -24,7 +24,8 @@ function processTicketData(data) {
     const method = data['field1'];
     const copies = data['field51'];
     const cost = data['field184'];
-    const start_date = Date.parse(data['date_created']).toLocaleDateString('en-US', {});
+    let start_date_obj = new Date(data['date_created']);
+    const start_date = start_date_obj.toLocaleDateString('en-US', {});
     return {
         "id": id,
         "author": person,
