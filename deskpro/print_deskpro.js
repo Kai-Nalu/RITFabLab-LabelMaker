@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 async function deskproAPIGet(id) {
-    const APIKey = fs.readFileSync('./deskproAPIToken.txt',{
+    const APIKey = fs.readFileSync('./deskpro/deskproAPIToken.txt',{
         encoding: 'utf8',
         flag: 'r'
     });
