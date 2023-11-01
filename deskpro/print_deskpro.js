@@ -16,7 +16,8 @@ async function deskproAPIGet(id) {
     return data['ticket'];
 }
 
-function processAPIData(data) {
+function processTicketData(data) {
+    console.log(data);
     const id = data['id'];
     const person = data['person']['name'];
     const subject = data['subject'];
@@ -39,7 +40,7 @@ function printWithKey(key) {
     return new Promise (resolve => {
         const exec = require('child_process').exec;
         const generate_label_png = require("../generate_label_png");
-        result = processAPIData(deskproAPIGet(key));
+        result = processTicketData(deskproAPIGet(key));
         generate_label_png.generate_label_png(result).then(function(){
             exec('lp -d DYMO_LabelWriter_450 ./output/label.png');
             resolve();
