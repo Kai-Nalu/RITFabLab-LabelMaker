@@ -16,21 +16,16 @@ app.get('/', (req, res) => {
   console.debug(`Test connection from ${req.socket.remoteAddress}`);
 });
 
-const print_redmine = require("./print_redmine");
-app.get('/print-redmine', (req, res) => {
-  res.json(JSON.parse(req.query.json));
-  console.log(`Printing ticket`);
-  print_redmine.print_redmine(JSON.parse(req.query.json)).then(function(){
-    console.log(`Print successful`);
-  });
-});
-
-//DEPRECIATE
+const print_deskpro = require("./deskpro/print_deskpro");
 const print_jira = require("./jira/print_jira");
-app.get('/print-jira', (req, res) => {
-  res.send(req.query.key);
-  console.log(`Printing ticket ${req.query.key}`);
-  print_jira.print_jira(req.query.key).then(function(){
-    console.log(`Print successful`);
-  });
+const print_handler = {"deskpro": print_deskpro, "jira": print_jira};
+
+app.get('/print', (req, res) => {
+  if (req.query.key && req.query.source) {
+    res.send(req.query.key);
+    console.log(`Printing ticket ${req.query.key} from ${req.query.source}`);
+    print_handler[req.query.source].printWithKey(req.query.key).then(function(){
+      console.log(`Print successful`);
+    });
+  } else { console.error("Failed request: missing key or source."); }
 });

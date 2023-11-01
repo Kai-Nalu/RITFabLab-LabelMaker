@@ -1,4 +1,4 @@
-exports.print_jira = function(args) {
+exports.printWithKey = function(args) {
     return new Promise (resolve => {
         const jiraHandler = require("./jiraHandler");
         jiraHandler.jiraHandler(args).then(function(result) {
