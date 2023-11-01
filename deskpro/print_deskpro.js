@@ -40,10 +40,12 @@ function printWithKey(key) {
     return new Promise (resolve => {
         const exec = require('child_process').exec;
         const generate_label_png = require("../generate_label_png");
-        result = processTicketData(deskproAPIGet(key));
-        generate_label_png.generate_label_png(result).then(function(){
-            exec('lp -d DYMO_LabelWriter_450 ./output/label.png');
-            resolve();
+        deskproAPIGet(key).then(function(result) {
+            ticketData = processTicketData(result);
+            generate_label_png.generate_label_png(ticketData).then(function(){
+                exec('lp -d DYMO_LabelWriter_450 ./output/label.png');
+                resolve();
+            });
         });
     });
 }
