@@ -23,16 +23,19 @@ function processTicketData(data) {
     const method = data['field1'];
     const copies = data['field51'];
     const cost = data['field184'];
-    let start_date_obj = new Date(data['date_created']);
-    const start_date = start_date_obj.toLocaleDateString('en-US', {});
+    const start_date = data['date_created'];
+    let id_padded = id.toString().padStart(5, '0');
+    let id_formatted = `FL-${id_padded}`;
+    let start_date_obj = new Date(start_date);
+    let start_date_formatted = start_date_obj.toLocaleDateString('en-US', {});
     return {
-        "id": id,
+        "id": id_formatted,
         "author": person,
         "subject": subject,
         "tracker": method,
         "Copies": copies,
         "Estimated Cost": cost,
-        "start_date": start_date
+        "start_date": start_date_formatted
     };
 }
 
