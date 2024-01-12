@@ -17,6 +17,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/status', (req, res) => {
+  res.set({
+    "Access-Control-Allow-Origin": req.headers.origin
+  });
   res.sendStatus(200);
   console.debug(`Test connection from ${req.socket.remoteAddress}`);
 });
@@ -27,6 +30,9 @@ const print_handler = {"deskpro": print_deskpro, "jira": print_jira};
 
 app.get('/print', (req, res) => {
   if (req.query.key && req.query.source) {
+    res.set({
+      "Access-Control-Allow-Origin": req.headers.origin
+    });
     res.send(req.query.key);
     console.log(`Printing ticket ${req.query.key} from ${req.query.source}`);
     print_handler[req.query.source].printWithKey(req.query.key).then(function(){
