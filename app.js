@@ -16,6 +16,11 @@ app.get('/', (req, res) => {
   console.debug(`Test connection from ${req.socket.remoteAddress}`);
 });
 
+app.get('/status', (req, res) => {
+  res.sendStatus(200);
+  console.debug(`Test connection from ${req.socket.remoteAddress}`);
+});
+
 const print_deskpro = require("./deskpro/print_deskpro");
 const print_jira = require("./jira/print_jira");
 const print_handler = {"deskpro": print_deskpro, "jira": print_jira};
