@@ -4,7 +4,7 @@ const deskpro_key_path = "./deskpro/deskproAPIToken.txt";
 function updateApiKey(key, type) {
 	return new Promise (resolve => {
 		if (type = "deskpro") {
-			fs.writeFile(deskpro_key_path, key, err => {
+			fs.writeFile(deskpro_key_path, decodeURI(key), err => {
 				if (err) {
 					console.error(err);
 					resolve(false);
